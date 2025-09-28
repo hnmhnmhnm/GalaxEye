@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  web:
+    build: ./web
+    ports: ["5173:5173"]
+    depends_on: [api]
+
+  api:
+    build: ./api
+    ports: ["8080:8080"]
+    volumes: ["./data:/data"]
+    environment:
+      - WORKER_CMD=python /app/worker.py
+    depends_on: [worker]
+
+  worker:
+    build: ./worker
+    volumes: ["./data:/data"]
+
+volumes:
+  data:
