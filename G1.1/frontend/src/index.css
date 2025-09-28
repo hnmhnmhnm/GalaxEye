@@ -1,0 +1,1 @@
+html,body,#root{height:100%;} .app{display:flex;flex-direction:column;height:100%} .top{padding:8px;background:#111;color:#fff} .main{display:flex;flex:1} .map{flex:1} .side{width:360px;padding:8px;overflow:auto;background:#f7f7f7}
